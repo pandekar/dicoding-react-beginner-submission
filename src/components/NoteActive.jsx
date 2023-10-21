@@ -3,9 +3,8 @@ import React from "react";
 import { NoteItem } from '../components'
 import { getNoteItemProps } from '../utils/index';
 
-const NoteActive = ({ datas, onDelete }) => {
-
-  // console.log(datas);
+const NoteActive = (props) => {
+  const { datas, onDelete } = props
 
   return (
     <div className="container note-active">

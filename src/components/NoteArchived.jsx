@@ -2,7 +2,8 @@ import React from "react";
 import { NoteItem } from '../components';
 import { getNoteItemProps } from '../utils/index';
 
-const NoteArchived = ({ datas, onDelete }) => {
+const NoteArchived = (props) => {
+  const { datas, onDelete } = props;
 
   return (
     <div className="container note-archived">

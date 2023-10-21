@@ -44,10 +44,6 @@ const NoteForm = (props) => {
 
     _cleanForm();
   };
-  
-  useEffect(() => {
-    console.log(title, body, archived)
-  }, [title, body, archived]);
 
   return (
     <div className='container note-form'>
