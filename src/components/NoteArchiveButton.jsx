@@ -1,6 +1,6 @@
-const NoteArchiveButton = (props) => (
+const NoteArchiveButton = ({ id, onArchive }) => (
   <button
-    // onClick={onDelete(id)}
+    onClick={onArchive(id)}
   >
     ARSIPKAN
   </button>

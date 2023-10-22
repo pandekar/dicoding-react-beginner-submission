@@ -25,7 +25,18 @@ const NoteApp = () => {
   };
 
   const _handleUpdateNoteIsArchived = (id) => () => {
-    console.log(id)
+    const noteIndex = datas.findIndex((data) => data.id === id);
+    const oldNote = datas[noteIndex];
+
+    const newNote = {
+      ...oldNote,
+      archived: !oldNote.archived
+    };
+
+    const newDatas = [...datas]
+    newDatas[noteIndex] = newNote
+
+    setDatas(newDatas);
   };
 
   const getNotesSectionProps = (noteStatus, notes) => ({
