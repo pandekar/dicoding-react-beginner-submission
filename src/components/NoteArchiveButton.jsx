@@ -1,8 +1,8 @@
-const NoteArchiveButton = ({ id, onArchive }) => (
+const NoteArchiveButton = ({ id, onArchive, isArchived }) => (
   <button
     onClick={onArchive(id)}
   >
-    ARSIPKAN
+    {isArchived ? 'Move to Active Section': 'Move to Archive Section'}
   </button>
 );
 
