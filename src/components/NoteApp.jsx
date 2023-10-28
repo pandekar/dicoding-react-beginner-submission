@@ -4,7 +4,8 @@ import { getData } from '../utils';
 import {
   NoteForm,
   NoteActive,
-  NoteArchived
+  NoteArchived,
+  NoteSearch
 } from '../components';
 
 const STATUS_ARCHIVED = true;
@@ -48,6 +49,7 @@ const NoteApp = () => {
   return (
     <div className='main'>
       <NoteForm setDatas={setDatas} datasContext={datasContext} />
+      <NoteSearch />
       {isActive && <NoteActive {...getNotesSectionProps(STATUS_ACTIVE, datas)} />}
       {isArchived && <NoteArchived {...getNotesSectionProps(STATUS_ARCHIVED, datas)} />}
     </div>

@@ -23,6 +23,10 @@
   align-items: center;
 }
 
+.note-search {
+  width: 80%;
+}
+
 .note-active {
   width: 80%;
 }

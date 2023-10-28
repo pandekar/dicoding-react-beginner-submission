@@ -3,6 +3,7 @@ import NoteActive from "./NoteActive";
 import NoteArchived from "./NoteArchived";
 import NoteForm from "./NoteForm";
 import NoteItem from "./NoteItem";
+import NoteSearch from "./NoteSearch";
 
 export {
   NoteApp,
@@ -10,4 +11,5 @@ export {
   NoteArchived,
   NoteForm,
   NoteItem,
+  NoteSearch
 };

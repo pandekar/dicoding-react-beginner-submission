@@ -2,7 +2,7 @@ const NoteArchiveButton = ({ id, onArchive, isArchived }) => (
   <button
     onClick={onArchive(id)}
   >
-    {isArchived ? 'Move to Active Section': 'Move to Archive Section'}
+    {isArchived ? 'Aktifkan': 'Arsipkan'}
   </button>
 );
 

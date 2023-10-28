@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 
 const emptyString = '';
 
@@ -7,12 +7,30 @@ const NoteForm = (props) => {
   const datas = useContext(datasContext);
 
   const [title, setTitle] = useState(emptyString);
+  const [titleLengthWarning, setTitleLengthWarning] = useState(false)
   const [body, setBody] = useState(emptyString);
   const [archived, setArchived] = useState(false);
 
+  const _renderCharLimitWarning = () => {
+    return (
+      <div>LEBIH DARI 50!!!!</div>
+    );
+  };
+
   const _onChangeHandlerTitle = (event) => {
     const data = event.target.value;
-    setTitle(data);
+    
+    // title limit warning
+    if (data.length >= 50) {
+      setTitleLengthWarning(true)
+    } else {
+      setTitleLengthWarning(false)
+    }
+
+    if (data.length <= 50) {
+      setTitle(data);
+      
+    }
   };
 
   const _onChangeHandlerBody = (event) => {
@@ -53,7 +71,8 @@ const NoteForm = (props) => {
           <label htmlFor='title'>Judul: </label>
         </div>
         <div >
-          <input id='title' type='text' value={title} onChange={_onChangeHandlerTitle}/>
+          <input id='title' type='text' value={title} onChange={_onChangeHandlerTitle} />
+          {titleLengthWarning && _renderCharLimitWarning()}
         </div>
         <br />
         <div>
