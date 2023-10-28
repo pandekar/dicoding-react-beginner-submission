@@ -49,7 +49,7 @@ const NoteApp = () => {
   return (
     <div className='main'>
       <NoteForm setDatas={setDatas} datasContext={datasContext} />
-      <NoteSearch />
+      <NoteSearch datas={datas} />
       {isActive && <NoteActive {...getNotesSectionProps(STATUS_ACTIVE, datas)} />}
       {isArchived && <NoteArchived {...getNotesSectionProps(STATUS_ARCHIVED, datas)} />}
     </div>
