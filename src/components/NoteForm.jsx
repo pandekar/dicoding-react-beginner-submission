@@ -1,35 +1,43 @@
 import { useState, useContext } from 'react';
 
 const emptyString = '';
+const CHAR_LIMIT = 50
+
 
 const NoteForm = (props) => {
   const { setDatas, datasContext } = props;
+  const titleLengthLimit = CHAR_LIMIT;
   const datas = useContext(datasContext);
 
   const [title, setTitle] = useState(emptyString);
   const [titleLengthWarning, setTitleLengthWarning] = useState(false)
+  const [remainingChar, setRemainingChar] = useState(CHAR_LIMIT);
   const [body, setBody] = useState(emptyString);
   const [archived, setArchived] = useState(false);
 
   const _renderCharLimitWarning = () => {
     return (
-      <div>LEBIH DARI 50!!!!</div>
+      <div>jumlah karakter tersisa: {remainingChar}</div>
     );
   };
 
   const _onChangeHandlerTitle = (event) => {
     const data = event.target.value;
-    
+    const availableCharInput = titleLengthLimit - data.length;
+
+    if (availableCharInput === -1) return
+
+    setRemainingChar(availableCharInput)
+
     // title limit warning
-    if (data.length >= 50) {
+    if (availableCharInput < CHAR_LIMIT) {
       setTitleLengthWarning(true)
     } else {
       setTitleLengthWarning(false)
     }
 
-    if (data.length <= 50) {
-      setTitle(data);
-      
+    if (availableCharInput >= 0) {
+      setTitle(data);  
     }
   };
 
