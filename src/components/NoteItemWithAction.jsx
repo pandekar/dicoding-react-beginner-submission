@@ -9,10 +9,12 @@ const NoteItemWithAction = (props) => {
   } = props;
 
   return (
-    <div>
+    <div className='note-item-with-action'>
       <NoteItem title={title} body={body} />
-      <NoteArchiveButton id={id} onArchive={onArchive} isArchived={archived} />
-      <NoteDeleteButton id={id} onDelete={onDelete} />
+      <div className='action-button-container'>
+        <NoteArchiveButton id={id} onArchive={onArchive} isArchived={archived} />
+        <NoteDeleteButton id={id} onDelete={onDelete} />
+      </div>
     </div>
   );
 }

@@ -52,6 +52,7 @@ const NoteForm = (props) => {
 
   const _cleanForm = () => {
     setTitle(emptyString);
+    setTitleLengthWarning(false);
     setBody(emptyString);
     setArchived(false);
   };
@@ -73,28 +74,38 @@ const NoteForm = (props) => {
 
   return (
     <div className='container note-form'>
-      <h1>Buat catatan</h1>
+      <div id='formTitle'>
+        <h1>Buat Catatan</h1>
+      </div>
       <form onSubmit={_onSubmitHandler}>
-        <div>
-          <label htmlFor='title'>Judul: </label>
-        </div>
-        <div >
-          <input id='title' type='text' value={title} onChange={_onChangeHandlerTitle} />
+        <div id='titleInputField'>
+          <input
+            id='title'
+            type='text'
+            value={title}
+            onChange={_onChangeHandlerTitle}
+            placeholder='masukan judul catatan'
+          />
           {titleLengthWarning && _renderCharLimitWarning()}
         </div>
         <br />
-        <div>
-          <label htmlFor='notes'>Catatan: </label>
-        </div>
-        <div>
-          <textarea id="notes" rows="5" cols="50" value={body} onChange={_onChangeHandlerBody}></textarea>
+        <div id='noteInputField'>
+          <textarea
+            id="notes"
+            rows="5"
+            cols="50"
+            value={body}
+            onChange={_onChangeHandlerBody}
+            placeholder='masukan isi catatan'
+          >
+          </textarea>
         </div>
         <br />
         <div>
           <input id="isArchived" name="isArchived" type="checkbox" value={archived} checked={archived} onChange={_onChangeHandlerArchivedCheckbox}/>
-          <label htmlFor="isArchived">put into archive</label>
+          <label htmlFor="isArchived">Arsipkan</label>
         </div>
-        <button type='submit'>Buat</button>
+        <button id='noteFormSubmitButton' type='submit'>Simpan</button>
       </form>
     </div>
   )

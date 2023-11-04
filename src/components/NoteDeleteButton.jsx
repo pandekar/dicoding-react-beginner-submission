@@ -1,8 +1,9 @@
 const NoteDeleteButton = ({ id, onDelete }) => (
   <button
+    id="noteDeleteButton"
     onClick={onDelete(id)}
   >
-    X
+    Hapus
   </button>
 );
 

@@ -45,9 +45,13 @@ class NoteSearch extends React.Component {
     return (
       <div className="container note-search">
         <form onSubmit={this._onSubmitHandler}>
-          <label htmlFor="searchBar">Cari</label>
-          <input id='searchBar' type='text' value={this.searchKey} onChange={this._onChangeHandlerSearchBar}/>
-          <button type='submit'>Cari</button>
+          <input id='searchBar'
+            type='text'
+            value={this.searchKey}
+            onChange={this._onChangeHandlerSearchBar}
+            placeholder="masukan judul..."
+          />
+          <button id="searchBarButton" type='submit'>Cari</button>
         </form>
         {this.state.searchData.map((data) => <NoteItem
             key={data.id}

@@ -7,14 +7,19 @@ const NoteArchived = (props) => {
 
   return (
     <div className="container note-archived">
-      {datas.map(
-        data => <NoteItemWithAction
-            key={data.id}
-            {...getNoteItemProps(data)}
-            onDelete={onDelete}
-            onArchive={onNoteArchiveClick}
-          />
-      )}
+      <div>
+        <h1>Catatan Arsip</h1>
+      </div>
+      <div>
+        {datas.map(
+          data => <NoteItemWithAction
+              key={data.id}
+              {...getNoteItemProps(data)}
+              onDelete={onDelete}
+              onArchive={onNoteArchiveClick}
+            />
+        )}
+      </div>
     </div>
   );
 };
