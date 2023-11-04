@@ -5,6 +5,7 @@ import NoteForm from "./NoteForm";
 import NoteItem from "./NoteItem";
 import NoteItemWithAction from "./NoteItemWithAction";
 import NoteSearch from "./NoteSearch";
+import NoteEmpty from "./NoteEmpty";
 
 export {
   NoteApp,
@@ -13,5 +14,6 @@ export {
   NoteForm,
   NoteItem,
   NoteItemWithAction,
-  NoteSearch
+  NoteSearch,
+  NoteEmpty
 };

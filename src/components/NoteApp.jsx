@@ -6,16 +6,15 @@ import {
   NoteArchived,
   NoteSearch
 } from '../components';
+import { getInitialData } from '../utils';
 
 const STATUS_ARCHIVED = true;
 const STATUS_ACTIVE = false;
 
 const NoteApp = () => {
-  const [datas, setDatas] = useState([]);
+  const initialDatas = getInitialData();
+  const [datas, setDatas] = useState(initialDatas);
   const datasContext = createContext(datas);
-
-  const isActive = datas.some(data => data.archived === STATUS_ACTIVE);
-  const isArchived = datas.some(data => data.archived === STATUS_ARCHIVED);
 
   const _handleOnDelete = (id) => () => {
     const newDatas = datas.filter((data) => data.id !== id);
@@ -48,8 +47,8 @@ const NoteApp = () => {
     <div className='main'>
       <NoteForm setDatas={setDatas} datasContext={datasContext} />
       <NoteSearch datas={datas} />
-      {isActive && <NoteActive {...getNotesSectionProps(STATUS_ACTIVE, datas)} />}
-      {isArchived && <NoteArchived {...getNotesSectionProps(STATUS_ARCHIVED, datas)} />}
+      <NoteActive {...getNotesSectionProps(STATUS_ACTIVE, datas)} />
+      <NoteArchived {...getNotesSectionProps(STATUS_ARCHIVED, datas)} />
     </div>
   );
 };
