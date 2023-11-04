@@ -43,9 +43,10 @@ class NoteSearch extends React.Component {
 
   render() {
     return (
-      <div className="container note-search">
+      <div className="card container note-search">
         <form onSubmit={this._onSubmitHandler}>
           <input id='searchBar'
+            className="card"
             type='text'
             value={this.searchKey}
             onChange={this._onChangeHandlerSearchBar}

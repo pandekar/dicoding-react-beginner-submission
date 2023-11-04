@@ -7,7 +7,7 @@ const NoteActive = (props) => {
   const { datas, onDelete, onNoteArchiveClick } = props
 
   return (
-    <div className="container note-active">
+    <div className="card container note-active">
       <div>
         <h1>Catatan Aktif</h1>
       </div>

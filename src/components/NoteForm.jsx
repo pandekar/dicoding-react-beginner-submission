@@ -73,7 +73,7 @@ const NoteForm = (props) => {
   };
 
   return (
-    <div className='container note-form'>
+    <div className='card container note-form'>
       <div id='formTitle'>
         <h1>Buat Catatan</h1>
       </div>

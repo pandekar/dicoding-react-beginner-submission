@@ -11,11 +11,14 @@
   align-items: center;
 }
 
+.card {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
 .container {
   background-color: #39A7FF;
-  border-radius: 5px;
   border-color: black;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   margin: 10px;
   padding: 10px;
 }
@@ -85,16 +88,12 @@
 
 .note-item {
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 5px;
   margin: 20px 10px;
   padding: 20px 10px;
 }
 
 .note-item-with-action {
   background-color: #E0F4FF;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  border-radius: 5px;
   margin: 20px 10px;
   padding: 20px 10px;
   text-align: left;
@@ -104,26 +103,19 @@
   margin: 5px 10px;
 }
 
-#noteActionButton {
-  background-color: green;
+.action-button {
   border: white;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  color: white;
   font-size: medium;
+  color: white;
   font-weight: bold;
   padding: 10px;
   width: 200px;
 }
 
+#noteActionButton {
+  background-color: green;
+}
+
 #noteDeleteButton {
   background-color: red;
-  border: white;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  font-size: medium;
-  color: white;
-  font-weight: bold;
-  padding: 10px;
-  width: 200px;
 }

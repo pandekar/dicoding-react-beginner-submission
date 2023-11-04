@@ -6,7 +6,7 @@ const NoteArchived = (props) => {
   const { datas, onDelete, onNoteArchiveClick } = props;
 
   return (
-    <div className="container note-archived">
+    <div className="card container note-archived">
       <div>
         <h1>Catatan Arsip</h1>
       </div>
