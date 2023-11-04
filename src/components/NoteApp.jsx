@@ -1,6 +1,5 @@
 import { useState, createContext } from 'react';
 
-import { getData } from '../utils';
 import {
   NoteForm,
   NoteActive,
@@ -12,8 +11,7 @@ const STATUS_ARCHIVED = true;
 const STATUS_ACTIVE = false;
 
 const NoteApp = () => {
-  const getDataValues = getData();
-  const [datas, setDatas] = useState(getDataValues);
+  const [datas, setDatas] = useState([]);
   const datasContext = createContext(datas);
 
   const isActive = datas.some(data => data.archived === STATUS_ACTIVE);
