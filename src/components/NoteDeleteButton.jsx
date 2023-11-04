@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const NoteDeleteButton = ({ id, onDelete }) => (
   <button
     id="noteDeleteButton"
@@ -7,5 +9,10 @@ const NoteDeleteButton = ({ id, onDelete }) => (
     Hapus
   </button>
 );
+
+NoteDeleteButton.propTypes = {
+  id: PropTypes.number,
+  onDelete: PropTypes.func
+}
 
 export default NoteDeleteButton;

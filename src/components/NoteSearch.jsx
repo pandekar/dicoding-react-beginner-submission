@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import { NoteItem } from './index'
 import { getNoteItemProps } from "../utils";
 
@@ -62,5 +64,9 @@ class NoteSearch extends React.Component {
     )
   }
 }
+
+NoteSearch.propTypes = {
+  datas: PropTypes.array
+};
 
 export default NoteSearch;

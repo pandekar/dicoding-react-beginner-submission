@@ -1,4 +1,5 @@
-import React from 'react';
+import PropTypes from 'prop-types';
+
 import { NoteItem } from './index'
 import NoteDeleteButton from './NoteDeleteButton';
 import NoteArchiveButton from './NoteArchiveButton';
@@ -17,6 +18,15 @@ const NoteItemWithAction = (props) => {
       </div>
     </div>
   );
+};
+
+NoteItemWithAction.propTypes = {
+  id: PropTypes.number,
+  title: PropTypes.string,
+  body: PropTypes.string,
+  archived: PropTypes.bool,
+  onArchive: PropTypes.func,
+  onDelete: PropTypes.func
 }
 
 export default NoteItemWithAction;
